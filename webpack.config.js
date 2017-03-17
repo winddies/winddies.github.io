@@ -1,7 +1,8 @@
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
-var pluginData=[new ExtractTextPlugin('./dist/style.css'),new OpenBrowserPlugin({ url: 'http://localhost:8080/' })]
+var pluginData=[new ExtractTextPlugin('style.css'),new OpenBrowserPlugin({ url: 'http://localhost:8080/' })]
+
 module.exports = {
   entry: './src/index.js',
   output: {
