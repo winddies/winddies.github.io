@@ -18,12 +18,26 @@ const rootRoute = {
     require.ensure([], (require) => {
       cb(null, require('./components/Main').default)
     }, 'Main')
-  }
-  // childRoutes: [
-  //   require('./routes/baidu'),
-  //   require('./routes/404'),
-  //   require('./routes/redirect')
-  // ]
+  },
+  childRoutes: [
+  	{
+  		path:'/category',
+  		getComponent(nextState, cb) {
+		    require.ensure([], (require) => {
+		      cb(null, require('./components/Catogory').default)
+		    }, 'Catogory')
+  		}
+  	},
+  	{
+  		path:'/expand',
+  		getComponent(nextState, cb) {
+		    require.ensure([], (require) => {
+		      cb(null, require('./components/expand').default)
+		    }, 'Expand')
+  		}
+  	}
+    
+  ]
 }
 
 
